@@ -7,7 +7,7 @@ output: html_document
 
 I chose to analyze the dataset that contained information about items checked out at least 10 times a month from 2017 - 2023. I thought this would be really interesting to look at to see what books have been popular within the Seattle population for a longer period of time. By understanding this information, I can better illustrate which types of media and of which subject category are most popular within people living in this area. This information can be utilized in the future to better inform what types of products the library invests in and how to improve the products and services based on what people typically enjoy.  
 
-### Summary Information
+### Summary Information 
 
 Overall, this dataset has 816,354  items checked out including ebooks, books, magazines, movies, and comics, to name a few. The most common method of checking out was by using OverDrive, a library company that digitally distributes ebooks, audiobooks, and online magazines. Over the course of 2017 - 2023, the item that was checked out the most number of times was "So You Want to Talk about Race" by Ijeoma Oluo. This is a non - fiction book published in 2018 that discusses race in contemporary America. Considering the vast amounts of protests related to police brutality and Black Lives Matter that began in 2020, I believe that this makes sense. However, in contrast to the genre of the most commonly checked out item, the category that had the most number of items checked out within it is comedy, spoofs, and satire. In a way, this also makes sense, as when the Covid - 19 pandemic began, people turned towards comedy and humor in order to cope with quarantine. In addition, the publisher that made the most number of checked out items was 'Entertainment One Films Canada', which was founded in 2007 and purchased by Hasbro in 2019. Finally, in 2017 the most common type of media checkout was videocasettes and video discs, while the most common type of media checkout in 2023 is ebooks. 
 
@@ -34,6 +34,7 @@ Here's an example of how to run an R script inside an RMarkdown file:
 
 ``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
 library(dplyr)
+library(ggplot2)
 books <- read.csv("/Users/meganashivakumar/Desktop/INFO201CODE/2017-2023-10-Checkouts-SPL-Data.csv", stringsAsFactors = FALSE)
 seventeen <- books %>% 
   filter(CheckoutYear == "2017") %>% 
@@ -48,11 +49,12 @@ group_by_year1 <- books %>%
   group_by(CheckoutYear) %>% 
   summarise(total_checkouts = sum(Checkouts))
 
-ggplot(data = group_by_year1, aes(x = CheckoutYear, y = total_checkouts))+
-    geom_line()
+# ggplot(data = group_by_year1, aes(x = CheckoutYear, y = total_checkouts))+
+    # geom_line()
 
-ggplot(data = group_by_year, aes(x = total_checkouts, y = MaterialType)) + 
-  geom_line()
+## make new df with only cols and rows needed for the graph
+ggplot(data = group_by_year, aes(x = MaterialType)) + 
+  geom_bar()
 ```
 
 ### Second Trends Over Time Chart
@@ -73,6 +75,7 @@ When we say "clear" or "human readable" titles and labels, that means that you s
 Here's an example of how to run an R script inside an RMarkdown file:
 
 ``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+
 ```
 
 ### Your Choice
@@ -91,8 +94,8 @@ top_items <- books %>%
   arrange(desc(Checkouts)) %>%
   slice(1:10)
 
-ggplot(data = top_items, aes(x = Checkouts, y = Title)) + 
-  geom_line()
+ggplot(data = top_items, aes(x = Title)) + 
+  geom_bar()
 ```
 
 

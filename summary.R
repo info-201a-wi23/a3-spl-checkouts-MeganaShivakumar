@@ -5,6 +5,7 @@ books <- read.csv("/Users/meganashivakumar/Desktop/INFO201CODE/2017-2023-10-Chec
 
 summary_info <- list()
 
+# ADD COMMENTS
 summary_info$num_observations <- nrow(books)
 
 # ADD COMMENTS
