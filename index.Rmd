@@ -30,31 +30,12 @@ In your .Rmd file, make sure to describe why you included the chart, and what pa
 
 When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
 
+I chose to look at trends of how the total number of items checked out from the Seattle Public Library has changed over time. I was interested in this because I was curious to see if the number of checkouts decreased when the pandemic began and people had less access to the physical products from the library. The graph shows that this is true, as there is a sharp decline in the number of checkouts from 2019 to 2020, and then a slight increase and subsequent decrease after. 
+
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
-library(dplyr)
-library(ggplot2)
-books <- read.csv("/Users/meganashivakumar/Desktop/INFO201CODE/2017-2023-10-Checkouts-SPL-Data.csv", stringsAsFactors = FALSE)
-seventeen <- books %>% 
-  filter(CheckoutYear == "2017") %>% 
-  count(MaterialType == "EBOOK")
+``````{r, echo = FALSE, warning = FALSE, code = readLines("Chart1.R")}
 
-group_by_year <- books %>% 
-  group_by(CheckoutYear, MaterialType) %>% 
-  summarise(total_checkouts = sum(Checkouts)) %>% 
-  slice(1:5)
-
-group_by_year1 <- books %>% 
-  group_by(CheckoutYear) %>% 
-  summarise(total_checkouts = sum(Checkouts))
-
-# ggplot(data = group_by_year1, aes(x = CheckoutYear, y = total_checkouts))+
-    # geom_line()
-
-## make new df with only cols and rows needed for the graph
-ggplot(data = group_by_year, aes(x = MaterialType)) + 
-  geom_bar()
 ```
 
 ### Second Trends Over Time Chart
@@ -72,9 +53,11 @@ In your .Rmd file, make sure to describe why you included the chart, and what pa
 
 When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
 
+I was interested in looking at the total number of checkouts per item type, in order to determine what the most popular type of checkout item is. Not surprisingly, this graph shows that the most checked out item from the library is physical books, followed closely by audiobooks. Next, comic books and CR (what I believe to mean 'community room') are the next group of most checked out, followed by atlas or maps. 
+
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+``````{r, echo = FALSE, code = readLines("Chart2.R")}
 
 ```
 
@@ -86,16 +69,12 @@ The last chart is up to you. It could be a line plot, scatter plot, histogram, b
 - The chart needs a clear title 
 - You need a legend for your different line colors and a clear legend title
 
+For my last graph, I was curious to see what the top 10 most checked out books were from the library, because I really enjoy reading and was interested to see what types of books are most popular within the Seattle area. 
+
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
-top_items <- books %>% 
-  select(Checkouts, Title) %>% 
-  arrange(desc(Checkouts)) %>%
-  slice(1:10)
+``````{r, echo = FALSE, code = readLines("Chart3.R")}
 
-ggplot(data = top_items, aes(x = Title)) + 
-  geom_bar()
 ```
 
 
