@@ -17,45 +17,15 @@ This data is collected by the Seattle Public Library, the public library system 
 
 ### First Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+I chose to look at trends of how the total number of reading items checked out from the Seattle Public Library has changed over time. I was interested in this because I was curious to see if the number of book checkouts decreased when the pandemic began and people had less access to the physical products from the library. In addition, I wanted to see if the number of ebooks and audiobooks that were checked out increased, as these would be accessible to people from home. The graph shows that this is true, as there is a sharp decline in the number of book checkouts from 2019 to 2020, and then a slight increase and subsequent decrease after. Opposingly, the number of ebook and audiobook checkouts increased from 2017 to 2022, before decreasing into 2023. However, the decline that is seen into 2023 in all 3 categories is likely because 2023 has just begun, so there is an uneven comparison between a whole year of checkouts from 2022 vs. only two months of checkout data in 2023. 
 
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-I chose to look at trends of how the total number of items checked out from the Seattle Public Library has changed over time. I was interested in this because I was curious to see if the number of checkouts decreased when the pandemic began and people had less access to the physical products from the library. The graph shows that this is true, as there is a sharp decline in the number of checkouts from 2019 to 2020, and then a slight increase and subsequent decrease after. 
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, warning = FALSE, code = readLines("Chart1.R")}
+``````{r, echo = FALSE, code = readLines("Chart1.R")}
 
 ```
 
 ### Second Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-I was interested in looking at the total number of checkouts per item type, in order to determine what the most popular type of checkout item is. Not surprisingly, this graph shows that the most checked out item from the library is physical books, followed closely by audiobooks. Next, comic books and CR (what I believe to mean 'community room') are the next group of most checked out, followed by atlas or maps. 
-
-Here's an example of how to run an R script inside an RMarkdown file:
+I was interested in looking at the total number of checkouts per item type, in order to determine what the most popular type of checkout item is. Not surprisingly, this graph shows that the most checked out item from the library is physical books, followed closely by audiobooks. Next, comic books and CR (what I believe to mean 'community room') are the next group of most checked out, followed by atlas/maps. For this chart, I created a bar chart with a zoom in on the columns that were smaller, Atlas, CR, and Comics, since they could not properly be viewed on the left bar chart. 
 
 ``````{r, echo = FALSE, code = readLines("Chart2.R")}
 
@@ -63,15 +33,7 @@ Here's an example of how to run an R script inside an RMarkdown file:
 
 ### Your Choice
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
-
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-For my last graph, I was curious to see what the top 10 most checked out books were from the library, because I really enjoy reading and was interested to see what types of books are most popular within the Seattle area. 
-
-Here's an example of how to run an R script inside an RMarkdown file:
+For my last graph, I was curious to see what the top 10 most checked out books were from the library, because I really enjoy reading and was interested to see what types of books are most popular within the Seattle area. The most checked out book was "The Midnight Line" by Lee Child. This was checked out almost 2 times more than the 2nd highest most checked out book. Interestingly, the rest of the most checked out books were checked out roughly the same amount of times, about 750 times from 2017 - 2023. Many of these books relate to politics and the current culture, seen by "Becoming", "Fear: Trump in the White House", and "Fire and Fury: Inside the Trump White House". Most of these are also non - fiction books, with less fiction books. This may indicate that it tends to be older adults checking out books from the library, as opposed to younger children. 
 
 ``````{r, echo = FALSE, code = readLines("Chart3.R")}
 

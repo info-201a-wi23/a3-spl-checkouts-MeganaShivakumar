@@ -1,5 +1,4 @@
 library(dplyr)
-library(ggplot2)
 
 books <- read.csv("/Users/meganashivakumar/Desktop/INFO201CODE/2017-2023-10-Checkouts-SPL-Data.csv", stringsAsFactors = FALSE)
 
