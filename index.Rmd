@@ -25,7 +25,7 @@ I chose to look at trends of how the total number of reading items checked out f
 
 ### Second Trends Over Time Chart
 
-I was interested in looking at the total number of checkouts per item type, in order to determine what the most popular type of checkout item is. Not surprisingly, this graph shows that the most checked out item from the library is physical books, followed closely by audiobooks. Next, comic books and CR (what I believe to mean 'community room') are the next group of most checked out, followed by atlas/maps. For this chart, I created a bar chart with a zoom in on the columns that were smaller, Atlas, CR, and Comics, since they could not properly be viewed on the left bar chart. 
+I was interested in looking at the total number of checkouts per item type, in order to determine what the most popular type of checkout item is. Not surprisingly, this graph shows that the most checked out item from the library is physical books, followed closely by audiobooks. Next, comic books and CR (what I believe to mean 'community room') are the next group of most checked out, followed by atlas/maps. For this chart, I created a bar chart with a zoom in on the columns that were smaller, Atlas, CR, and Comics, since they could not properly be viewed on the right bar chart. 
 
 ``````{r, echo = FALSE, code = readLines("Chart2.R")}
 

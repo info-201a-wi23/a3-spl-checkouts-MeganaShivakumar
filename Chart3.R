@@ -11,8 +11,10 @@ top_items <- books %>%
 
 top_items_df <- data.frame(top_items)
 
-ggplot(data = top_items_df, aes(x = Title, y = Checkouts)) + 
+ggplot(data = top_items_df, aes(x = reorder(Title, -Checkouts), y = Checkouts)) + 
   geom_bar(stat="identity", width=.5, fill="blue") + 
   labs(title = "Most Checked Out Books from 2017 - 2023", x = "Book Title", y = "Total Number of Checkouts") +
   theme_light() +
   scale_x_discrete(labels = function(x) str_wrap(x, width = 10))
+
+
