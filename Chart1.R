@@ -35,6 +35,6 @@ ggplot(data = all_groups_df, aes(x = CheckoutYear)) +
   geom_line(aes(y = Books, color = "Books")) + 
   geom_line(aes(y = Ebooks, color = "Ebooks")) + 
   geom_line(aes(y = Audiobooks, color = "Audiobooks")) + 
-  labs(title = "How Number of Checkouts Have Changed Over Time from 2017 - 2023", x = "Checkout Year", y = "Total Number of Checkouts", colors = "Legend") +
+  labs(title = "How Number of Checkouts Have Changed Over Time from 2017 - 2023", x = "Checkout Year", y = "Total Number of Checkouts", colors = "Legend", color = "Legend - Different Forms of Books") +
   scale_color_manual(values = colors) + 
   theme_light()

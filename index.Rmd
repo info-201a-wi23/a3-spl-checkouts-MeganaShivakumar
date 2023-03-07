@@ -9,7 +9,11 @@ I chose to analyze the dataset that contained information about items checked ou
 
 ### Summary Information 
 
-Overall, this dataset has 816,354  items checked out including ebooks, books, magazines, movies, and comics, to name a few. The most common method of checking out was by using OverDrive, a library company that digitally distributes ebooks, audiobooks, and online magazines. Over the course of 2017 - 2023, the item that was checked out the most number of times was "So You Want to Talk about Race" by Ijeoma Oluo. This is a non - fiction book published in 2018 that discusses race in contemporary America. Considering the vast amounts of protests related to police brutality and Black Lives Matter that began in 2020, I believe that this makes sense. However, in contrast to the genre of the most commonly checked out item, the category that had the most number of items checked out within it is comedy, spoofs, and satire. In a way, this also makes sense, as when the Covid - 19 pandemic began, people turned towards comedy and humor in order to cope with quarantine. In addition, the publisher that made the most number of checked out items was 'Entertainment One Films Canada', which was founded in 2007 and purchased by Hasbro in 2019. Finally, in 2017 the most common type of media checkout was videocasettes and video discs, while the most common type of media checkout in 2023 is ebooks. 
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+source("summary.R")
+```
+
+Overall, this dataset has `r summary_info$obvs` items checked out including ebooks, books, magazines, movies, and comics, to name a few. The most common method of checking out was by using `r summary_info$max_checkout_type`, a library company that digitally distributes ebooks, audiobooks, and online magazines. Over the course of 2017 - 2023, the item that was checked out the most number of times was `r summary_info$max_checkout_title` by Ijeoma Oluo. This is a non - fiction book published in 2018 that discusses race in contemporary America. Considering the vast amounts of protests related to police brutality and Black Lives Matter that began in 2020, I believe that this makes sense. In relation, the genre of the most commonly checked out item, the category that had the most number of items checked out within it is `r summary_info$subject`. In addition, the publisher that made the most number of checked out items was `r summary_info$publisher`, which was founded in 2007 and purchased by Hasbro in 2019. Finally, in 2017 the most common type of media checkout was `r summary_info$min_print_checkouts`, which is the same as 2023, as the most common type of media checkout was also `r summary_info$max_print_checkouts`. The mixed category involves a combination of mixed checkout items. 
 
 ### The Dataset
 
@@ -19,7 +23,7 @@ This data is collected by the Seattle Public Library, the public library system 
 
 I chose to look at trends of how the total number of reading items checked out from the Seattle Public Library has changed over time. I was interested in this because I was curious to see if the number of book checkouts decreased when the pandemic began and people had less access to the physical products from the library. In addition, I wanted to see if the number of ebooks and audiobooks that were checked out increased, as these would be accessible to people from home. The graph shows that this is true, as there is a sharp decline in the number of book checkouts from 2019 to 2020, and then a slight increase and subsequent decrease after. Opposingly, the number of ebook and audiobook checkouts increased from 2017 to 2022, before decreasing into 2023. However, the decline that is seen into 2023 in all 3 categories is likely because 2023 has just begun, so there is an uneven comparison between a whole year of checkouts from 2022 vs. only two months of checkout data in 2023. 
 
-``````{r, echo = FALSE, code = readLines("Chart1.R")}
+``````{r, echo = FALSE, code = readLines("Chart1.R"), warning = FALSE, message = FALSE}
 
 ```
 
@@ -27,7 +31,7 @@ I chose to look at trends of how the total number of reading items checked out f
 
 I was interested in looking at the total number of checkouts per item type, in order to determine what the most popular type of checkout item is. Not surprisingly, this graph shows that the most checked out item from the library is physical books, followed closely by audiobooks. Next, comic books and CR (what I believe to mean 'community room') are the next group of most checked out, followed by atlas/maps. For this chart, I created a bar chart with a zoom in on the columns that were smaller, Atlas, CR, and Comics, since they could not properly be viewed on the right bar chart. 
 
-``````{r, echo = FALSE, code = readLines("Chart2.R")}
+``````{r, echo = FALSE, code = readLines("Chart2.R"), warning = FALSE, message = FALSE}
 
 ```
 
@@ -35,7 +39,7 @@ I was interested in looking at the total number of checkouts per item type, in o
 
 For my last graph, I was curious to see what the top 10 most checked out books were from the library, because I really enjoy reading and was interested to see what types of books are most popular within the Seattle area. The most checked out book was "The Midnight Line" by Lee Child. This was checked out almost 2 times more than the 2nd highest most checked out book. Interestingly, the rest of the most checked out books were checked out roughly the same amount of times, about 750 times from 2017 - 2023. Many of these books relate to politics and the current culture, seen by "Becoming", "Fear: Trump in the White House", and "Fire and Fury: Inside the Trump White House". Most of these are also non - fiction books, with less fiction books. This may indicate that it tends to be older adults checking out books from the library, as opposed to younger children. 
 
-``````{r, echo = FALSE, code = readLines("Chart3.R")}
+``````{r, echo = FALSE, code = readLines("Chart3.R"), warning = FALSE, message = FALSE}
 
 ```
 

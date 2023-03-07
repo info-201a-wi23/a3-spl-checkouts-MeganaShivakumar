@@ -4,10 +4,8 @@ books <- read.csv("/Users/meganashivakumar/Desktop/INFO201CODE/2017-2023-10-Chec
 
 summary_info <- list()
 
-# ADD COMMENTS
-summary_info$num_observations <- nrow(books)
+summary_info$obvs <- nrow(books)
 
-# ADD COMMENTS
 summary_info$max_checkout_type <- books %>% 
   filter(Checkouts == max(Checkouts, na.rm = TRUE)) %>% 
   pull(CheckoutType)
@@ -17,23 +15,19 @@ summary_info$max_checkout_title <- books %>%
   pull(Title)
 
 summary_info$subject <- books %>% 
-  group_by(Subjects) %>% 
   filter(Checkouts == max(Checkouts, na.rm = TRUE)) %>% 
   pull(Subjects)
 
 summary_info$publisher <- books %>% 
-  group_by(Publisher) %>%
   filter(Checkouts == max(Checkouts, na.rm = TRUE)) %>%
   pull(Publisher)
 
 summary_info$min_print_checkouts <- books %>% 
-  filter(CheckoutYear == "2017") %>% 
-  group_by(MaterialType) %>% 
+  filter(CheckoutYear == "2017") %>%
   filter(Checkouts == max(Checkouts)) %>% 
   pull(MaterialType)
 
 summary_info$max_print_checkouts <- books %>% 
-  filter(CheckoutYear == "2023") %>% 
-  group_by(MaterialType) %>% 
+  filter(CheckoutYear == "2023") %>%
   filter(Checkouts == max(Checkouts)) %>% 
   pull(MaterialType)
